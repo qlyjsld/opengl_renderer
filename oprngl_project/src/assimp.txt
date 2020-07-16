@@ -1,0 +1,46 @@
+model("../blah.obj");
+
+//loadModel("../blah.obj");
+
+directory = path // (../)
+
+processnode(mRootNode, scene)
+
+for loop number of meshes for the rootnode
+
+push esch mesh to a vector contain meshes with a functin "processmesh"
+
+second for loop number of children node
+
+process them like the root node
+
+
+target of setup a model -> setup a vector of mesh*******
+
+each mesh has some data to pass into shader in order to draw them
+e.g. 
+     //Vertex     //Indices      //Textures
+     1. position  1.unsigned int 1. id
+     2. normal                   2. type
+     3. texcroods                3. path
+     4. tangent 
+     5. bitangent
+and all of these propertites are vector too!
+
+processmesh: find init for each mesh i.e. vector of vertex, indices and texture
+
+for loop number of vertices
+
+push vertex to "vertex vector" -> finish mesh.vertex
+
+for loop number of faces
+
+push indices                   -> finish mesh.indices
+
+push material                  -> finish mesh.textures
+
+Last Step!
+Draw the Model:
+
+loop every mesh in the vector<mesh> stored early on
+and call their draw function to draw

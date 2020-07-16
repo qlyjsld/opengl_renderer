@@ -1,0 +1,13 @@
+﻿  global.cpp
+C:\opengl-renderer\oprngl_project\src\global.cpp(63,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\opengl-renderer\oprngl_project\src\global.cpp(64,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\opengl-renderer\oprngl_project\src\global.cpp(65,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\opengl-renderer\oprngl_project\src\global.cpp(66,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+  main.cpp
+C:\opengl-renderer\oprngl_project\src\mesh.h(24,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
+LINK : warning LNK4098: 預設的程式庫 'MSVCRTD' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
+LINK : warning LNK4098: 預設的程式庫 'LIBCMT' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
+  正在產生程式碼
+  已完成程式碼產生
+glew32s.lib(glew.obj) : warning LNK4099: 找不到 PDB 'vc120.pdb' (有 'glew32s.lib(glew.obj)' 或位於 'C:\opengl-renderer\Release\vc120.pdb')，當做沒有偵錯資訊，連結物件
+  oprngl_project.vcxproj -> C:\opengl-renderer\Release\oprngl_project.exe

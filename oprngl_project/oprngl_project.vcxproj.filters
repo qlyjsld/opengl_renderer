@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="來源檔案">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="標頭檔">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="資源檔">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\stb_image\stb_image.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\texture.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mvp.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\camera.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\global.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\IndexBuffer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\Renderer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\shader.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VertexArray.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VertexBuffer.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mesh.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_demo.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_draw.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_impl_glfw.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_impl_opengl3.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shader\basic.shader" />
+    <None Include="res\shader\dirtwithgrass.shader" />
+    <None Include="res\shader\test.shader" />
+    <None Include="res\shader\lighting.shader" />
+    <None Include="res\shader\globallight.shader" />
+    <None Include="res\shader\pointlight.shader" />
+    <None Include="res\shader\flashlight.shader" />
+    <None Include="res\3dobj\backpack\backpack.mtl" />
+    <None Include="res\3dobj\Exports\LeakeStreetTunnel03.mtl" />
+    <None Include="res\3dobj\conques_tympan\conques_tympan.mtl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\vendor\stb_image\stb_image.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\texture.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mvp.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\IndexBuffer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\Renderer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\shader.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VertexArray.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VertexBuffer.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VertexBufferLayout.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\object.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\global.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\globalVar.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mesh.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imconfig.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imgui.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imgui_internal.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imstb_rectpack.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imstb_textedit.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imstb_truetype.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imgui_impl_glfw.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\imgui\imgui_impl_opengl3.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\texture\wood.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\awesomeface.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\dirt.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\dirtwithgrass.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\grass.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\woodbox.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\woodbox_specular.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\emission.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\texture\flashlight.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\backpack\ao.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\backpack\diffuse.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\backpack\normal.png">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\backpack\roughness.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\backpack\specular.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\Exports\LeakeStreetTunnel02.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\conques_tympan\conques_tympan.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\conques_tympan\conques_tympan_occlusion.jpg">
+      <Filter>資源檔</Filter>
+    </Image>
+    <Image Include="res\3dobj\MyRCCar_TypicalMonster_MTC_ISS\MyRCCar_TypicalMonster_MTC_ISS.png">
+      <Filter>資源檔</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\3dobj\backpack\source_attribution.txt" />
+    <Text Include="src\assimp.txt" />
+  </ItemGroup>
+</Project>
