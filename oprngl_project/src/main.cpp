@@ -15,15 +15,12 @@
 #include "texture.h"
 #include "mvp.h"
 #include "camera.h"
-#include "object.h"
+#include "global.h"
 #include "globalVar.h"
-#include "mesh.h"
-#include "model.h"
 #include "vendor/imgui/imgui.h"
 #include "vendor/imgui/imgui_impl_opengl3.h"
 #include "vendor/imgui/imgui_impl_glfw.h"
 #include "vendor/stb_image/stb_image.h"
-#include "global.h"
 
 int main(void)
 {
@@ -58,15 +55,119 @@ int main(void)
 
     renderPrepare(window);
 
-    {model model("res/3dobj/backpack/backpack.obj");
-    //model model("res/3dobj/Exports/LeakeStreetTunnel03.obj");
-    //model model("res/3dobj/conques_tympan/conques_tympan.obj");
-    //model model("res/3dobj/MyRCCar_TypicalMonster_MTC_ISS/MyRCCar_TypicalMonster_MTC_ISS.obj");
-    Shader basicshader("res/shader/basic.shader");
+    glm::vec3 box_pos[7]{
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(2.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, 2.0f, 0.0f),
+        glm::vec3(0.0f, 0.0f, 2.0f),
+        glm::vec3(-2.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, -2.0f, 0.0f),
+        glm::vec3(0.0f, 0.0f, -2.0f)
+    };
+    
+    glm::vec3 light_pos[6]{
+        glm::vec3(10.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, 10.0f, 0.0f),
+        glm::vec3(0.0f, 0.0f, 10.0f),
+        glm::vec3(-10.0f, 0.0f, 0.0f),
+        glm::vec3(0.0f, -10.0f, 0.0f),
+        glm::vec3(0.0f, 0.0f, -10.0f)
+    };
+
+    float square[192] = {
+        // positions          // normals           // texture coords
+        -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 0.0f,
+         0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 0.0f,
+         0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,  0.0f, 1.0f,
+
+        -0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 0.0f,
+         0.5f, -0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 0.0f,
+         0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f,  0.0f, 1.0f,   0.0f, 1.0f,
+
+        -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
+
+         0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 0.0f,
+         0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  1.0f, 1.0f,
+         0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 1.0f,
+         0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,  0.0f, 0.0f,
+
+        -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 1.0f,
+         0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 1.0f,
+         0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,  0.0f, 0.0f,
+
+        -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 1.0f,
+         0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 1.0f,
+         0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,  0.0f, 0.0f,
+    };
+
+    unsigned int square_index[36] = {
+         0,  1,  2,
+         0,  2,  3,
+         4,  5,  6,
+         4,  6,  7,
+         8,  9, 10,
+         8, 10, 11,
+        12, 13, 14,
+        12, 14, 15,
+        16, 17, 18,
+        16, 18, 19,
+        20, 21, 22,
+        20, 22, 23
+    };
+
+    {VertexArray box_va;
+    VertexBuffer box_vb(&square[0], len(square) * sizeof(float));
+    IndexBuffer box_ib(&square_index[0], 36);
+    VertexBufferLayout layout;
+    layout.Push<float>(3);
+    layout.Push<float>(3);
+    layout.Push<float>(2);
+    box_va.AddBuffer(layout);
+
+    Shader light_shader("res/shader/light.shader");
+    Shader box_shader("res/shader/box.shader");
+    box_shader.updateUniform<int>("material.diffuse", 0);
+    box_shader.updateUniform<int>("material.specular", 1);
+    box_shader.updateUniform<float>("material.shininess", 1.0);
+
+    for (unsigned int i = 0; i < len(light_pos); i++) {
+        box_shader.updateUniform<glm::vec3>("pointlight[" + std::to_string(i) + "].position", light_pos[i]);
+        box_shader.updateUniform<glm::vec3>("pointlight[" + std::to_string(i) + "].ambient", glm::vec3(0.2f, 0.2, 0.2f));
+        box_shader.updateUniform<glm::vec3>("pointlight[" + std::to_string(i) + "].diffuse", glm::vec3(0.5f, 0.5, 0.5f));
+        box_shader.updateUniform<glm::vec3>("pointlight[" + std::to_string(i) + "].specular", glm::vec3(0.8f, 0.8f, 0.8f));
+        box_shader.updateUniform<float>("pointlight[" + std::to_string(i) + "].constant", 1);
+        box_shader.updateUniform<float>("pointlight[" + std::to_string(i) + "].linear", 0.7);
+        box_shader.updateUniform<float>("pointlight[" + std::to_string(i) + "].quadratic", 1.8);
+    }
+
+    box_shader.updateUniform<glm::vec3>("dirlight.direction", glm::vec3(0.0f, -1.0, 0.0f));
+    box_shader.updateUniform<glm::vec3>("dirlight.ambient", glm::vec3(0.2f, 0.2, 0.2f));
+    box_shader.updateUniform<glm::vec3>("dirlight.diffuse", glm::vec3(0.5f, 0.5, 0.5f));
+    box_shader.updateUniform<glm::vec3>("dirlight.specular", glm::vec3(0.8f, 0.8f, 0.8f));
+
+    box_shader.updateUniform<float>("spotlight.cutoff", glm::cos(glm::radians(12.5)));
+    box_shader.updateUniform<float>("spotlight.outercutoff", glm::cos(glm::radians(17.5)));
+    box_shader.updateUniform<glm::vec3>("spotlight.ambient", glm::vec3(0.2f, 0.2, 0.2f));
+    box_shader.updateUniform<glm::vec3>("spotlight.diffuse", glm::vec3(0.5f, 0.5, 0.5f));
+    box_shader.updateUniform<glm::vec3>("spotlight.specular", glm::vec3(0.8f, 0.8f, 0.8f));
+    box_shader.updateUniform<float>("spotlight.constant", 1);
+    box_shader.updateUniform<float>("spotlight.linear", 0.045);
+    box_shader.updateUniform<float>("spotlight.quadratic", 0.0075);
+
+    box_shader.updateUniform<glm::vec3>("lightcolor", glm::vec3(1.0f, 1.0f, 1.0f));
+
+    Texture box_diffuse("res/texture/woodbox.jpg");
+    Texture box_specular("res/texture/woodbox_specular.jpg");
+
     mvp mvp;
-
     defaultCamera.setAllcamerapos(glm::vec3(0.0f, 1.0f, 3.0f), glm::vec3(0.0f, -0.5f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-
     Renderer renderer;
 
     const char* glsl_version = "#version 330 core";
@@ -88,59 +189,55 @@ int main(void)
 
         defaultCamera.processInput(window);
 
+        box_shader.updateUniform<glm::vec3>("viewpos", defaultCamera.cameraPos);
+        box_shader.updateUniform<glm::vec3>("spotlight.position", defaultCamera.cameraPos);
+        box_shader.updateUniform<glm::vec3>("spotlight.direction", defaultCamera.cameraFront);
+
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-        // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-        if (show_demo_window)
-            ImGui::ShowDemoWindow(&show_demo_window);
+        {static float f = 0.0f;
+        static int counter = 0;
 
-        // 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
-        {
-            static float f = 0.0f;
-            static int counter = 0;
+        ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
-            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+        ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+        ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+        ImGui::Checkbox("Another Window", &show_another_window);
 
-            ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-            ImGui::Checkbox("Another Window", &show_another_window);
+        ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+        ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
 
-            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
+        if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+            counter++;
+        ImGui::SameLine();
+        ImGui::Text("counter = %d", counter);
 
-            if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-                counter++;
-            ImGui::SameLine();
-            ImGui::Text("counter = %d", counter);
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        ImGui::End();}
 
-            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            ImGui::End();
+        box_diffuse.Bind(0);
+        box_specular.Bind(1);
+        for (unsigned int i = 0; i < len(box_pos); i++) {
+            mvp.reset();
+            mvp.rotate(mvp.model, glfwGetTime(), glm::vec3(0.2f, 0.3f, 0.8f));
+            mvp.translate(mvp.model, box_pos[i]);
+            mvp.rotate(mvp.model, glfwGetTime(), glm::vec3(0.8f, 0.3f, 0.2f));
+            mvp.view = glm::mat4(defaultCamera.lookat(defaultCamera.cameraPos, defaultCamera.cameraPos + defaultCamera.cameraFront, defaultCamera.cameraUp));
+            mvp.perspective(mvp.projection, glm::radians(fov), 1920.0 / 1080.0f, 0.1f, 100.0f);
+            mvp.updateUniform(box_shader);
+            renderer.Draw(box_va, box_ib, box_shader);
         }
 
-        // 3. Show another simple window.
-        if (show_another_window)
-        {
-            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-            ImGui::Text("Hello from another window!");
-            if (ImGui::Button("Close Me"))
-                show_another_window = false;
-            ImGui::End();
+        for (unsigned int i = 0; i < len(light_pos); i++) {
+            mvp.reset();
+            mvp.translate(mvp.model, light_pos[i]);
+            mvp.view = glm::mat4(defaultCamera.lookat(defaultCamera.cameraPos, defaultCamera.cameraPos + defaultCamera.cameraFront, defaultCamera.cameraUp));
+            mvp.perspective(mvp.projection, glm::radians(fov), 1920.0 / 1080.0f, 0.1f, 100.0f);
+            mvp.updateUniform(light_shader);
+            renderer.Draw(box_va, box_ib, light_shader);
         }
-
-        mvp.diagonal(mvp.model, 1.0f);
-        mvp.translate(mvp.model, glm::vec3(0.0f, 0.0f, 0.0f));
-        //mvp.rotate(mvp.model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-        mvp.updateUniform(mvp.model, basicshader);
-
-        mvp.view = defaultCamera.lookat(defaultCamera.cameraPos, defaultCamera.cameraPos + defaultCamera.cameraFront, defaultCamera.cameraUp);
-        mvp.updateUniform(mvp.view, basicshader);
-   
-        mvp.perspective(mvp.projection, glm::radians(fov), 1920.0f / 1080.0f, 0.1f, 100.0f);
-        mvp.updateUniform(mvp.projection, basicshader);
-
-        model.draw(basicshader);
 
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

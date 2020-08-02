@@ -48,12 +48,6 @@
     <ClCompile Include="src\renderer\VertexBuffer.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="src\mesh.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
-    <ClCompile Include="src\model.cpp">
-      <Filter>來源檔案</Filter>
-    </ClCompile>
     <ClCompile Include="src\vendor\imgui\imgui.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
@@ -77,16 +71,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shader\basic.shader" />
-    <None Include="res\shader\dirtwithgrass.shader" />
-    <None Include="res\shader\test.shader" />
-    <None Include="res\shader\lighting.shader" />
-    <None Include="res\shader\globallight.shader" />
-    <None Include="res\shader\pointlight.shader" />
-    <None Include="res\shader\flashlight.shader" />
-    <None Include="res\3dobj\backpack\backpack.mtl" />
-    <None Include="res\3dobj\Exports\LeakeStreetTunnel03.mtl" />
-    <None Include="res\3dobj\conques_tympan\conques_tympan.mtl" />
+    <None Include="res\shader\box.shader" />
+    <None Include="res\shader\light.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\vendor\stb_image\stb_image.h">
@@ -119,19 +105,10 @@
     <ClInclude Include="src\renderer\VertexBufferLayout.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
-    <ClInclude Include="src\object.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="src\global.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="src\globalVar.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mesh.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
-    <ClInclude Include="src\model.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
     <ClInclude Include="src\vendor\imgui\imconfig.h">
@@ -163,55 +140,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\texture\wood.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\awesomeface.png">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\dirt.png">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\dirtwithgrass.png">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\grass.png">
-      <Filter>資源檔</Filter>
-    </Image>
     <Image Include="res\texture\woodbox.jpg">
       <Filter>資源檔</Filter>
     </Image>
     <Image Include="res\texture\woodbox_specular.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\emission.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\texture\flashlight.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\backpack\ao.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\backpack\diffuse.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\backpack\normal.png">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\backpack\roughness.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\backpack\specular.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\Exports\LeakeStreetTunnel02.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\conques_tympan\conques_tympan.jpg">
-      <Filter>資源檔</Filter>
-    </Image>
-    <Image Include="res\3dobj\conques_tympan\conques_tympan_occlusion.jpg">
       <Filter>資源檔</Filter>
     </Image>
     <Image Include="res\3dobj\MyRCCar_TypicalMonster_MTC_ISS\MyRCCar_TypicalMonster_MTC_ISS.png">
@@ -219,7 +151,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="res\3dobj\backpack\source_attribution.txt" />
     <Text Include="src\assimp.txt" />
   </ItemGroup>
 </Project>

@@ -20,35 +20,9 @@ void renderPrepare(GLFWwindow* window) {
     glfwSetCursorPos(window, lastX, lastY);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scoll_callback);
-    glfwSetKeyCallback(window, camera_callback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glEnable(GL_DEPTH_TEST);
-    glfwSwapInterval(1);
-}
-
-void camera_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-    if ((key == GLFW_KEY_CAPS_LOCK) && (action == GLFW_RELEASE)) {
-        if (defaultCamera.stat == status::on) {
-            glfwSetCursorPosCallback(window, 0);
-            glfwSetCursorPosCallback(window, 0);
-            glfwSetScrollCallback(window, 0);
-            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-            defaultCamera.stat = status::off;
-        }
-        else {
-            glfwSetCursorPos(window, lastX, lastY);
-            glfwSetCursorPosCallback(window, mouse_callback);
-            glfwSetScrollCallback(window, scoll_callback);
-            glfwSetKeyCallback(window, camera_callback);
-            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-            defaultCamera.stat = status::on;
-            fov = 45.0;
-            yaw = -90.0f;
-            pitch = 0.0f;
-            lastX = 400;
-            lastY = 300;
-        }
-    }
+    glfwSwapInterval(0);
 }
 
 void scoll_callback(GLFWwindow* window, double xoffset, double yoffset) {

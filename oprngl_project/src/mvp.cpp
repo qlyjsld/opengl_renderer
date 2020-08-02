@@ -4,26 +4,23 @@
 #include "mvp.h"
 
 mvp::mvp()
-	: model (glm::mat4(1.0f)), view (glm::mat4(1.0f))
-{
-	;
-}
+	: model(glm::mat4(1.0f)), view(glm::mat4(1.0f)), projection(glm::mat4(1.0f)) {}
 
 void mvp::diagonal(glm::mat4& mat4buffer, const float& num) {
 	mat4buffer = glm::mat4(num);
 }
 
-void mvp::updateUniform(glm::mat4& mat4buffer, Shader& shaderBuffer) {
+void mvp::reset() {
+	view = glm::mat4(1.0);
+	model = glm::mat4(1.0);
+	projection = glm::mat4(1.0);
+}
+
+void mvp::updateUniform(Shader& shaderBuffer) {
 	shaderBuffer.Bind();
-	if (mat4buffer == model) {
-		glUniformMatrix4fv(shaderBuffer.GetUniformLocation("model"), 1, GL_FALSE, glm::value_ptr(mat4buffer));
-	}
-	else if (mat4buffer == view) {
-		glUniformMatrix4fv(shaderBuffer.GetUniformLocation("view"), 1, GL_FALSE, glm::value_ptr(mat4buffer));
-	}
-	else if (mat4buffer == projection) {
-		glUniformMatrix4fv(shaderBuffer.GetUniformLocation("projection"), 1, GL_FALSE, glm::value_ptr(mat4buffer));
-	}
+	glUniformMatrix4fv(shaderBuffer.GetUniformLocation("model"), 1, GL_FALSE, glm::value_ptr(model));
+	glUniformMatrix4fv(shaderBuffer.GetUniformLocation("view"), 1, GL_FALSE, glm::value_ptr(view));
+	glUniformMatrix4fv(shaderBuffer.GetUniformLocation("projection"), 1, GL_FALSE, glm::value_ptr(projection));
 	shaderBuffer.Unbind();
 }
 

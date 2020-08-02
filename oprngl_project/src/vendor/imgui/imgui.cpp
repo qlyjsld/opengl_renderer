@@ -1,4 +1,4 @@
-#include "C:\opengl-renderer\oprngl_project\src\pch.h"
+#include "pch.h"
 // dear imgui, v1.77
 // (main code and documentation)
 

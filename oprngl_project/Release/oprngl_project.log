@@ -1,13 +1,32 @@
-﻿  global.cpp
-C:\opengl-renderer\oprngl_project\src\global.cpp(63,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(64,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(65,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(66,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-  main.cpp
-C:\opengl-renderer\oprngl_project\src\mesh.h(24,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
+﻿  main.cpp
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(146,92): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(147,95): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(155,65): warning C4244: '引數': 將 'double' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(156,70): warning C4244: '引數': 將 'double' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(161,62): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(162,66): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(224,46): warning C4244: '引數': 將 'double' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(226,46): warning C4244: '引數': 將 'double' 轉換為 'const float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(228,94): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(237,94): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
 LINK : warning LNK4098: 預設的程式庫 'MSVCRTD' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
 LINK : warning LNK4098: 預設的程式庫 'LIBCMT' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
   正在產生程式碼
   已完成程式碼產生
-glew32s.lib(glew.obj) : warning LNK4099: 找不到 PDB 'vc120.pdb' (有 'glew32s.lib(glew.obj)' 或位於 'C:\opengl-renderer\Release\vc120.pdb')，當做沒有偵錯資訊，連結物件
-  oprngl_project.vcxproj -> C:\opengl-renderer\Release\oprngl_project.exe
+glfw3.lib(context.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(context.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(init.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(init.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(input.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(input.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(monitor.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(monitor.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(vulkan.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(vulkan.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(window.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(window.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_init.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_init.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_joystick.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_joystick.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_monitor.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_monitor.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_time.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_time.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_thread.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_thread.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(win32_window.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(win32_window.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(wgl_context.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(wgl_context.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(egl_context.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(egl_context.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glfw3.lib(osmesa_context.obj) : warning LNK4099: 找不到 PDB 'glfw.pdb' (有 'glfw3.lib(osmesa_context.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\glfw.pdb')，當做沒有偵錯資訊，連結物件
+glew32s.lib(glew.obj) : warning LNK4099: 找不到 PDB 'vc120.pdb' (有 'glew32s.lib(glew.obj)' 或位於 'C:\Users\WU\Documents\GitHub\opengl_renderer\Release\vc120.pdb')，當做沒有偵錯資訊，連結物件
+  oprngl_project.vcxproj -> C:\Users\WU\Documents\GitHub\opengl_renderer\Release\oprngl_project.exe

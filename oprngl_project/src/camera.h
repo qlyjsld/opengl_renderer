@@ -2,8 +2,6 @@
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
-enum class status { on, off };
-
 class Camera {
 private:
 	float deltaTime = 0.0f;
@@ -13,7 +11,6 @@ public:
 	glm::vec3 cameraPos;
 	glm::vec3 cameraFront;
 	glm::vec3 cameraUp;
-	status stat = status::on;
 
 	void setcamerapos(glm::vec3& cameratype, const glm::vec3& vec3);
 	void setAllcamerapos(const glm::vec3& cameraPosb, const glm::vec3& cameraFrontb, const glm::vec3& cameraUpb);

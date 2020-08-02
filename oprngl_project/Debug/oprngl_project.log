@@ -1,24 +1,68 @@
-﻿  global.cpp
-C:\opengl-renderer\oprngl_project\src\mesh.h(25,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(17,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(18,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(19,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
-C:\opengl-renderer\oprngl_project\src\global.cpp(20,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+﻿  pch.cpp
+  camera.cpp
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\camera.cpp(9,31): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+  global.cpp
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\global.cpp(37,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\global.cpp(38,19): warning C4244: '正在初始化': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\global.cpp(39,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\global.cpp(40,13): warning C4244: '=': 將 'double' 轉換為 'float'，由於類型不同，可能導致資料遺失
   main.cpp
-C:\opengl-renderer\oprngl_project\src\mesh.h(25,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
-  mesh.cpp
-C:\opengl-renderer\oprngl_project\src\mesh.h(25,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
-  model.cpp
-C:\opengl-renderer\oprngl_project\src\mesh.h(25,1): warning C4267: '引數': 將 'size_t' 轉換為 'const unsigned int'，資料可能遺失
+C:\Users\WU\Documents\GitHub\opengl_renderer\oprngl_project\src\main.cpp(130,94): warning C4305: '引數': 從 'double' 轉換為 'const float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
   mvp.cpp
   IndexBuffer.cpp
   Renderer.cpp
-  VertexArray.cpp
-C:\opengl-renderer\oprngl_project\src\renderer\VertexArray.cpp(14,3): warning C4312: '類型轉換': 將 'unsigned int' 轉換為較大的 'const void *'
-  VertexBuffer.cpp
   shader.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
   texture.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui_widgets.cpp
+  stb_image.cpp
   正在產生程式碼...
 LINK : warning LNK4098: 預設的程式庫 'LIBCMT' 與其他使用的程式庫衝突，請使用 /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: 找不到 PDB 'vc120.pdb' (有 'glew32s.lib(glew.obj)' 或位於 'C:\opengl-renderer\Debug\vc120.pdb')，當做沒有偵錯資訊，連結物件
-  oprngl_project.vcxproj -> C:\opengl-renderer\Debug\oprngl_project.exe
+camera.obj : error LNK2019: 在函式 _glfwSetWindowShouldClose"public: void __thiscall Camera::processInput(struct GLFWwindow *)" (?processInput@Camera@@QAEXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+camera.obj : error LNK2019: 在函式 _glfwGetKey"public: void __thiscall Camera::processInput(struct GLFWwindow *)" (?processInput@Camera@@QAEXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+camera.obj : error LNK2019: 在函式 _glfwGetTime"public: void __thiscall Camera::processInput(struct GLFWwindow *)" (?processInput@Camera@@QAEXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2001: 無法解析的外部符號 _glfwGetTime
+global.obj : error LNK2019: 在函式 _glfwSetFramebufferSizeCallback"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+global.obj : error LNK2019: 在函式 _glfwSetInputMode"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2001: 無法解析的外部符號 _glfwSetInputMode
+global.obj : error LNK2019: 在函式 _glfwSetCursorPos"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2001: 無法解析的外部符號 _glfwSetCursorPos
+global.obj : error LNK2019: 在函式 _glfwSetCursorPosCallback"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+global.obj : error LNK2019: 在函式 _glfwSetScrollCallback"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2001: 無法解析的外部符號 _glfwSetScrollCallback
+global.obj : error LNK2019: 在函式 _glfwSwapInterval"void __cdecl renderPrepare(struct GLFWwindow *)" (?renderPrepare@@YAXPAUGLFWwindow@@@Z) 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwInit_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwTerminate_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwWindowHint_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwCreateWindow_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwWindowShouldClose_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwPollEvents_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwMakeContextCurrent_main 中參考了無法解析的外部符號
+main.obj : error LNK2019: 在函式 _glfwSwapBuffers_main 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetErrorCallback"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetWindowSize"void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetFramebufferSize"void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetWindowAttrib"void __cdecl ImGui_ImplGlfw_UpdateMousePosAndButtons(void)" (?ImGui_ImplGlfw_UpdateMousePosAndButtons@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetInputMode"void __cdecl ImGui_ImplGlfw_UpdateMouseCursor(void)" (?ImGui_ImplGlfw_UpdateMouseCursor@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetMouseButton"void __cdecl ImGui_ImplGlfw_UpdateMousePosAndButtons(void)" (?ImGui_ImplGlfw_UpdateMousePosAndButtons@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetCursorPos"void __cdecl ImGui_ImplGlfw_UpdateMousePosAndButtons(void)" (?ImGui_ImplGlfw_UpdateMousePosAndButtons@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwCreateStandardCursor"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwDestroyCursor"void __cdecl ImGui_ImplGlfw_Shutdown(void)" (?ImGui_ImplGlfw_Shutdown@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetCursor"void __cdecl ImGui_ImplGlfw_UpdateMouseCursor(void)" (?ImGui_ImplGlfw_UpdateMouseCursor@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetKeyCallback"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetCharCallback"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetMouseButtonCallback"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetJoystickAxes"void __cdecl ImGui_ImplGlfw_UpdateGamepads(void)" (?ImGui_ImplGlfw_UpdateGamepads@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetJoystickButtons"void __cdecl ImGui_ImplGlfw_UpdateGamepads(void)" (?ImGui_ImplGlfw_UpdateGamepads@@YAXXZ) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwSetClipboardString"void __cdecl ImGui_ImplGlfw_SetClipboardText(void *,char const *)" (?ImGui_ImplGlfw_SetClipboardText@@YAXPAXPBD@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetClipboardString"char const * __cdecl ImGui_ImplGlfw_GetClipboardText(void *)" (?ImGui_ImplGlfw_GetClipboardText@@YAPBDPAX@Z) 中參考了無法解析的外部符號
+imgui_impl_glfw.obj : error LNK2019: 在函式 _glfwGetWin32Window"bool __cdecl ImGui_ImplGlfw_Init(struct GLFWwindow *,bool,enum GlfwClientApi)" (?ImGui_ImplGlfw_Init@@YA_NPAUGLFWwindow@@_NW4GlfwClientApi@@@Z) 中參考了無法解析的外部符號
+C:\Users\WU\Documents\GitHub\opengl_renderer\Dependencies\GLFW\lib-vc2019\glfw3.lib : warning LNK4272: 程式庫電腦類型 'x64' 與目標電腦類型 'x86' 發生衝突
+C:\Users\WU\Documents\GitHub\opengl_renderer\Dependencies\assimp\lib\assimp-vc142-mtd.lib : warning LNK4272: 程式庫電腦類型 'x64' 與目標電腦類型 'x86' 發生衝突
+C:\Users\WU\Documents\GitHub\opengl_renderer\Debug\oprngl_project.exe : fatal error LNK1120: 35 個無法解析的外部符號

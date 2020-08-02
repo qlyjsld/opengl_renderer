@@ -1,6 +1,6 @@
 #pragma once
 #include <GL/glew.h>
-#include "../globalVar.h"
+#include "globalVar.h"
 
 class VertexBuffer{
 private:

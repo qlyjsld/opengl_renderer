@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "pch.h"
 #include "Renderer.h"
 
 void GLClearError() {
@@ -31,6 +31,6 @@ void Renderer::DrawSquare(const VertexArray& va, const Shader& shader) const {
 }
 
 void Renderer::Clear() const {
-    glClearColor(0.5f, 0.5f, 0.5f, 0.5f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }

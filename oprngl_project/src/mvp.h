@@ -11,10 +11,11 @@ public:
 	glm::mat4 projection;
 
 	void diagonal(glm::mat4& mat4buffer, const float& num);
+	void reset();
 	void translate(glm::mat4& mat4buffer, const glm::vec3& vec3);
 	void rotate(glm::mat4& mat4buffer, const float& angle, const glm::vec3& vec3);
 	void scale(glm::mat4& mat4buffer, const glm::vec3& vec3);
 	void perspective(glm::mat4& mat4buffer, const float& angle, const float& aspect, const float& near, const float& far);
 
-	void updateUniform(glm::mat4& mat4buffer, Shader& shaderBuffer);
+	void updateUniform(Shader& shaderBuffer);
 };

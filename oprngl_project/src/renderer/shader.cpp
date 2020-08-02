@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "pch.h"
 #include "Renderer.h"
 
 Shader::Shader(const std::string& filepath)

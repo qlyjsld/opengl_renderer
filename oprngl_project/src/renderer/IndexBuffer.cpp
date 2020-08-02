@@ -1,4 +1,4 @@
-#include "../pch.h"
+#include "pch.h"
 #include "Renderer.h"
 
 IndexBuffer::IndexBuffer(const unsigned int* data, const unsigned int& count):m_Count(count){
